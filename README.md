@@ -10,7 +10,7 @@ Sadly, TTC's public API doesn't provide subway schedules.  As such, this module 
 
 ## Installation
 1. Navigate into your MagicMirror `modules` folder and execute<br>
-`git clone https://github.com/jclarke0000/MMM-MyTTC.git`.
+`git clone https://github.com/onshisan/MMM-MyTTC.git`.
 2. Enter the new `MMM-MyTTC` directory and execute `npm install`.
 
 ## Configuration
@@ -39,9 +39,9 @@ Sadly, TTC's public API doesn't provide subway schedules.  As such, this module 
 Each entry in your `routeList` consists of a route number and stop number.
 
 First determine which routes you're interested in (e.g.: `501` for the Queen St. streetcar). The full list of routes are listed here:
-http://webservices.nextbus.com/service/publicXMLFeed?command=routeList&a=ttc
+https://retro.umoiq.com/service/publicXMLFeed?command=routeList&a=ttc
 
-Next, got to `http://webservices.nextbus.com/service/publicXMLFeed?command=routeConfig&a=ttc&r=501`.  Replace the parameter `r=501` in the URL
+Next, got to `https://retro.umoiq.com/service/publicXMLFeed?command=routeConfig&a=ttc&r=501`.  Replace the parameter `r=501` in the URL
 with whatever route number you're interested in.  Determine which stop you want to see arrival times for. Usually this will be the one you
 normally go to to wait for your bus or streetcar.  You'll need the number in the `tag` parameter, for example `2332`, as found in this line:
 
@@ -56,7 +56,7 @@ At bare minimum you need one entry, with two properties:
 * `stop` - the stop number along the route.
 
 You can test that you have the right combination by going to:
-`http://webservices.nextbus.com/service/publicXMLFeed?&command=predictionsForMultiStops&a=ttc&stops=501|2332`.  Replace the `stops` parameter
+`https://retro.umoiq.com/service/publicXMLFeed?&command=predictionsForMultiStops&a=ttc&stops=501|2332`.  Replace the `stops` parameter
 at the end of the URL with the route number and stop number separater by the pipe `|` character.
 
 Repeat for as many stops and routes as you would like.
